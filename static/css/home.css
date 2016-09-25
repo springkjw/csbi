@@ -110,3 +110,14 @@
 .news {
     margin-top: 40px;
 }
+
+.news h2 {
+    font-weight: 500;
+}
+
+.news h2 span {
+    font-size: 12px;
+    font-weight: 200;
+    color: #648efc;
+    margin-left: 10px;
+}

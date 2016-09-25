@@ -19,7 +19,8 @@
         <div class="container" style="">
             <div class="title">
                 <h2 class="padded">Welcome to</h2>
-                <h2 style="padding-top: 0px;"><span id="c">C</span>ell <span id="s">S</span>ignaling and <span id="b">B</span>io <span
+                <h2 style="padding-top: 0px;"><span id="c">C</span>ell <span id="s">S</span>ignaling and <span
+                        id="b">B</span>io <span
                         id="i">I</span>maging
                     Laboratory</h2>
             </div>
@@ -57,8 +58,17 @@
             </div>
             <div class="notice">
                 <div class="header">
-                    <h2>NEWS & NOTICE</h2>
-                    <span>+ More</span>
+                    <h2>
+                        NEWS & NOTICE
+                        <span>
+                            <a href="{% url 'notice_list' type='notice' %}">
+                                + more
+                            </a>
+                        </span>
+                    </h2>
+                </div>
+                <div class="content">
+
                 </div>
             </div>
         </div>
