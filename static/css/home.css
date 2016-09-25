@@ -108,11 +108,12 @@
 }
 
 .news {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .news h2 {
     font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .news h2 span {
@@ -120,4 +121,41 @@
     font-weight: 200;
     color: #648efc;
     margin-left: 10px;
+}
+
+.news .content .notice {
+    width: 45%;
+    position: relative;
+}
+
+.news .content .item {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+    padding: 10px 15px 10px 5px;
+}
+
+.news .content .item a {
+    font-size: 14px;
+}
+
+.news .content .item a:hover {
+    color: #648efc;
+}
+
+.news .content .item span {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 7);
+    float: right;
+}
+
+.research h2 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.research .tag a {
+    border: 1px solid #c8c8c8;
+    color: rgba(0, 0, 0, .6);
+    font-size: 14px;
+    font-weight: 300;
+    padding: 3px 8px 3px 8px;
 }
