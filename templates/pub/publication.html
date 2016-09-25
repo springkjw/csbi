@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/publication.css' %}">
+    <style>
+        .jumbotron {
+            min-height: 180px;
+            background-image: url("{% static 'img/pub_bg.jpg' %}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 0.9;
+        }
+    </style>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(function () {
+            var path = window.location.pathname;
+            $('.na').removeClass('active');
+
+            if (path.indexOf('patent') !== -1) {
+                $('.step2').addClass('active');
+            } else if (path.indexOf('conference') !== -1) {
+                $('.step3').addClass('active');
+            } else if (path.indexOf('book') !== -1) {
+                $('.step4').addClass('active');
+            } else {
+                $('.step1').addClass('active');
+            }
+        });
+    </script>
+{% endblock %}
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <h2>PUBLICATION</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="nav" style="margin-top:30px;">
+            <div class="na active step1" data-id="step1">
+                <a href="{% url 'publication' type='journal' %}">Journal</a>
+            </div>
+            <div class="na step2" data-id="step2">
+                <a href="{% url 'publication' type='patents' %}">Patents</a>
+            </div>
+            <div class="na step3" data-id="step3">
+                <a href="{% url 'publication' type='conference' %}">Conference</a>
+            </div>
+            <div class="na step4" data-id="step4">
+                <a href="{% url 'publication' type='book' %}">Book Chapter</a>
+            </div>
+        </div>
+        <div class="content">
+            {% if pub %}
+                {% for item in pub %}
+                    <div class="item">
+                        <a href="{{ item.get_absolute_url }}"><h3>{{ item }}</h3></a>
+                        <div class="meta">
+                            {{ item.author }} /
+                            {% if type == 'patents' %}
+                                {{ item.patent }} /
+                            {% elif type == 'conference' %}
+                                {{ item.conference }} /
+                            {% elif type == 'book' %}
+                                {{ item.book }} /
+                            {% else %}
+                                {{ item.journal }} /
+                            {% endif %}
+                            {{ item.year }}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="no_pub">
+                    There are no such type of publication.
+                </div>
+            {% endif %}
+            <div class="pagination">
+                {% if pub.has_previous %}
+                    <a href="?{{ page_request_var }}=
+                            {{ pub.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><</a>
+                {% endif %}
+
+                <span class="current">
+                    <span>Page</span> {{ pub.number }} <span>of</span> {{ pub.paginator.num_pages }}
+                </span>
+
+                {% if pub.has_next %}
+                    <a href="?{{ page_request_var }}=
+                            {{ pub.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

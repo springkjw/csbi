@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<div id="header">
+    <div class="inner">
+        <div id="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.gif' %}">
+            </a>
+        </div>
+        <div id="header_tnb">
+            <a id="prof" href="{% url 'profile' %}">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+                PROFESSOR
+            </a>
+            <a id="member" href="{% url 'member' %}">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+                MEMBER
+            </a>
+            <a id="research" href="{% url 'research' %}">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+                RESEARCH
+            </a>
+            <a id="pub" href="{% url 'publication' type='journal' %}">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+                PUBLICATION
+            </a>
+            <a id="board" href="{% url 'notice_list' type='notice' %}">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+                NOTICE
+            </a>
+        </div>
+    </div>
+</div>

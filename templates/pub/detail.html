@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <style>
+        .jumbotron {
+            min-height: 200px;
+            background: white;
+        }
+    </style>
+{% endblock %}
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <h3>{{ pub.type }}</h3>
+            <p>{{ pub }}</p>
+            <h4>{{ pub.author }}</h4>
+        </div>
+    </div>
+{% endblock %}
