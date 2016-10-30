@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSBI</title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.6.3/css/font-awesome.min.css' %}">
+    <style>
+        @font-face {
+            font-family: NotoSans;
+            src: url('{% static 'fonts/NotoSans-Regular.eot' %}');
+            src: local(※), url('{% static 'fonts/NotoSans-Regular.eot' %}') format(‘woff’);
+        }
+
+        body {
+            font-family: 'NotoSans', sans-serif;
+            font-weight: 300;
+        }
+    </style>
+    {% block css %}
+    {% endblock %}
+
+    <script type="text/javascript" src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+{% include 'header.html' %}
+
+{% block jumbotron %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% include 'footer.html' %}
+</body>
+</html>

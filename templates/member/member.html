@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/member.css' %}">
+    <style>
+        .jumbotron {
+            min-height: 180px;
+            background-image: url("{% static 'img/member_bg.jpg' %}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 0.9;
+        }
+    </style>
+{% endblock %}
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <h2>MEMBER</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="people">
+            <div class="div">
+                <div class="nav" id="b">
+                    Research Professor
+                </div>
+                {% for item in prof %}
+                    <div class="item">
+                        <img src="{{ item.get_image_url }}">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.get_shorcut }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="div">
+                <div class="nav" id="g">
+                    Post Doctoral Fellow
+                </div>
+                {% for item in post_doc %}
+                    <div class="item">
+                        <img src="{{ item.get_image_url }}">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.get_shorcut }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="div">
+                <div class="nav" id="o">
+                    Ph.D. Candidate
+                </div>
+                {% for item in phd %}
+                    <div class="item">
+                        <img src="{{ item.get_image_url }}">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.get_shorcut }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="div">
+                <div class="nav" id="b">
+                    Master Candidate
+                </div>
+                {% for item in master %}
+                    <div class="item">
+                        <img src="{{ item.get_image_url }}">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.get_shorcut }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="div">
+                <div class="nav" id="g">
+                    Staff
+                </div>
+                {% for item in staff %}
+                    <div class="item">
+                        <img src="{{ item.get_image_url }}">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.get_shorcut }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="div">
+                <div class="nav" id="o">
+                    Alumni
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Graduation</td>
+                        <td>Email</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in alumni %}
+                        <tr>
+                            <td class="name">{{ item.name }}</td>
+                            <td class="graduate">{{ item.graduation }}</td>
+                            <td class="email">{{ item.email }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

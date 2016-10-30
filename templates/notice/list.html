@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/notice.css' %}">
+    <style>
+        .jumbotron {
+            min-height: 180px;
+            background-image: url("{% static 'img/notice_bg.jpg' %}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 0.9;
+        }
+    </style>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(function () {
+            var path = window.location.pathname;
+            $('.na').removeClass('active');
+
+            if (path.indexOf('news') !== -1) {
+                $('.step2').addClass('active');
+            } else {
+                $('.step1').addClass('active');
+            }
+        });
+    </script>
+{% endblock %}
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <h2>NOTICE & NEWS</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="nav" style="margin-top:30px;">
+            <div class="na active step1" data-id="step1">
+                <a href="{% url 'notice_list' type='notice' %}">Notice</a>
+            </div>
+            <div class="na step2" data-id="step2">
+                <a href="{% url 'notice_list' type='news' %}">News</a>
+            </div>
+        </div>
+        <div class="content">
+            {% if notice %}
+                {% for item in notice %}
+                    <div class="item">
+                        <a href="{{ item.get_absolute_url }}"><h3>{{ item }}</h3></a>
+                        <div class="meta">
+                            {{ item.author }} / {{ item.created|date:"Y-m-d" }}
+                            <span><i class="fa fa-heart"></i> {{ item.like }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="no_pub">
+                    There are no {{ type }}.
+                </div>
+            {% endif %}
+            <div class="pagination">
+                {% if notice.has_previous %}
+                    <a href="?{{ page_request_var }}=
+
+                            {{ notice.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><</a>
+                {% endif %}
+
+                <span class="current">
+                    <span>Page</span> {{ notice.number }} <span>of</span> {{ notice.paginator.num_pages }}
+                </span>
+
+                {% if notice.has_next %}
+                    <a href="?{{ page_request_var }}=
+                            {{ notice.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

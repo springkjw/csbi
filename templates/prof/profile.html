@@ -1,0 +1,353 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <style>
+        .jumbotron {
+            min-height: 180px;
+            background-image: url("{% static 'img/profile_bg.jpg' %}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
+
+{% block jumbotron %}
+    <div class="jumbotron">
+
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="img">
+            <img src="{% static 'img/profile.png' %}">
+        </div>
+        <div class="content">
+            <div class="block left">
+                <h2>Chulhee Choi, MD, PhD</h2>
+                <p>Professor<br/>
+                    Chair, Optical Bioimaging Center<br/>
+                    Cell Signaling and BioImaging Laboratory<br/>
+                    Department of Bio and Brain Engineering, KAIST</p>
+                <div class="contact">
+                    Contact Info <span style="float:right">+</span>
+                    <div class="contact-content">
+                        <p>TEL: +82-42-350-4321/8552</p>
+                        <p>FAX: +82-42-350-4380</p>
+                        <p>EMAIL: cchoi@kaist.ac.kr</p>
+                    </div>
+                </div>
+                <h3>Research areas</h3>
+                <p>- <b>Cell Signaling</b>: Cell Death and proliferation,<br/>Inflammation, Cancer microenvironment and
+                    invasion</p>
+                <p>- <b>Biomedical Imaging</b>: Near-infrared fluorescence<br/>imaging, Dynamic ICG perfusion imaging
+                </p>
+                <p>- <b>Biophotonics</b>: Optical modulation of cellular<br/>function using femtosecond pulsed laser</p>
+
+                <h3>Editorial Board</h3>
+                <p>- <b>Nanobiosensors in Disease Diagnosis</b>(Dove Press):<br/>Editor-in-Chief since 2011 Sep</p>
+                <p>- <b>Communicative & Integrative Biology</b><br/>(Landes Bioscience):Editorial board member<br/>since
+                    2011 Sep</p>
+                <p>- <b>Cancer Letters</b>(Elsvier): Editorial board member<br/>since 2011 Jul</p>
+            </div>
+            <div class="block right">
+                <div class="nav" style="margin-top: 20px;">
+                    Education
+                </div>
+                <div class="cnt">
+                    <div class="item">
+                        <div class="date">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>08/99</span>
+                        </div>
+                        <div class="para"><b>PhD Degree</b>, Microbiology, Yonsei University College of Medicine, Seoul,
+                            Korea,<br/>
+                            Mentor: In-hong Choi, MD, PhD
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 100px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>03/95~02/99</span>
+                        </div>
+                        <div class="para" style="width: 490px;"><b>Residency</b>, Neurology, Yonsei University Medical
+                            Center
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>02/97</span>
+                        </div>
+                        <div class="para"><b>Masters Degree</b>, Neurology, Yonsei University College of Medicine
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 100px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>03/91~02/92</span>
+                        </div>
+                        <div class="para" style="width: 490px;"><b>Internship</b>, Internal Medicine, Yonsei University
+                            Medical Center, Korea
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>02/91</span>
+                        </div>
+                        <div class="para"><b>MD Degree</b>, Yonsei University College of Medicine, Seoul, Korea
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    Research Career
+                </div>
+                <div class="cnt">
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>03/12~present</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Professor</b>: Department of Bio and Brain
+                            Engineering, KAIST
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>10/09~present</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Chair</b>: Optical Bioimaging Center, KAIST
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>04/07~present</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Member</b>: KI for the BioCentury, KAIST
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>04/06~present</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Adjunctive professor</b>: Graduate School of Medical
+                            Science and Engineering, KAIST
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>04/06~present</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Chair</b>: BK21 Center for Bio-Medical Information
+                            Technology, KAIST
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>03/05~present</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Associate Professor</b>: Department of Bio and Brain
+                            Engineering, KAIST
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>09/02~02/05</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Assistant Professor</b>: Division of Molecular Life
+                            Sciences, Ewha Womans University, Seoul, Korea
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>10/01~12/03</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Research Instructor</b>: Department of Cell Biology,
+                            UAB
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="date" style="width: 110px;">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <span>04/99~09/01</span>
+                        </div>
+                        <div class="para" style="width: 480px;"><b>Postdoctoral Fellow</b>: Department of Cell Biology,
+                            University of Alabama at Birmingham (UAB), Mentor: Etty N. Benveniste, PhD
+                        </div>
+                    </div>
+                </div>
+                <div class="nav" id="g">
+                    Membership
+                </div>
+                <div class="cnt">
+                    <div class="item">
+                        <div class="para">
+                            - Active Member of American Society of Neurooncology, since 2012
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Active Member of American Association of Cancer Research (AACR), since 2009
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of The Korean Cancer Association, since 2009
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of the Pharmaceutical Society of Korea, since 2009
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of Korean Association of Neurology, since 1999
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of Korean Medical Association, since 1991
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of Korean Society for Molecular and Cellular Biology (KSMCB), since 2003
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of Korean Society for Cell Biology (KSCB), since 2003
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of Korean Society for Brain and Neural Science (KSBNS), since 2003
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Corresponding Junior Member of American Academy of Neurology (AAN), 2000-2002
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of American Association of Immunologists (AAI), 2001-2003
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Regular Member of American Society for Microbiology (ASM), 2001-2003
+                        </div>
+                    </div>
+                </div>
+                <div class="nav" id="g">
+                    Honors and Awards
+                </div>
+                <div class="cnt">
+                    <div class="item">
+                        <div class="para">
+                            - Korea Cancer Research Foundation Award (Excellence in basic cancer research) for
+                            “Constitutive expression of mitogen kinase phosphatase-1 confers chemoresistance in human
+                            malignant astrocytoma cells from Korean Cancer Association, 6/14/13 (at the 39th Annual
+                            Meeting, Lotte Hotel, Seoul)
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Best paper award from Korean Cancer Association for “Caspase-dependent generation of
+                            reactive oxygen species in human astrocytoma cells confers tumor resistance to
+                            TRAIL-mediated apoptosis”, 6/17/2011 (at 37th Annual Conference, Seoul, Korea)
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Best lecturerer award from Department of Bio and Brain Engineering, KAIST, Fall
+                            Semester/2010, Spring semester/2006, Fall semester/2005
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - 2010 S&T award (Excellence in biomedical research) from Korea Federation of Science and
+                            Technology Societies, 7/6/10 (at 2010 Korea S&T annual meeting, Daegu)
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - 2010 Korea Cancer Research Foundation Award (Excellence in basic cancer research) for
+                            “Proapoptotic Ginsenosides Compound K and Rh2 Enhance Fas-induced Cell Death of Human
+                            Astrocytoma Cells through Distinct Apoptotic Signaling Pathways” from Korean Cancer
+                            Association, 6/11/10 (at the 36th Annual Meeting, Lotte Hotel, Seoul)
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - 2009 Health Industry Technology Award (Excellence in Biomedical Research) for “Development
+                            of Near Infrared Fluorescence Imaging Technology for Measurement of Peripheral Tissue
+                            Perfusion” from Ministry for Health, Welfare & Family Affairs, Republic of Korea, 12/08/09
+                            (at the HITEK 2009, Coex, Seoul)
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - 2009 Technology Innovation Award (Excellence in Technology Innovation), KAIST
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Minister Prize for Excellence in University-Industry Cooperation from Ministry of
+                            Education, Science and Technology, Republic of Korea, 11/5/09 (at the 2009 UIC EXPO
+                            University-Industry Cooperation Center, Ilsan, Korea)
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - Bumsuk Award (Best academic achievement) from Eulji Foundation, 2004/2005/2006/2009
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - John R. Durant Award (Junior faculty category) for Excellence in Cancer Research from the
+                            Comprehensive Cancer Center of University of Alabama at Birmingham, 2001/200.
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - AAI Junior Faculty Travel Award for AAI Annual Meeting from the American Association of
+                            Immunologists, Apr 22, 2002
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - S. Weir Mitchell Award from the American Academy of Neurology, May 11, 2001
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="para">
+                            - John R. Durant Award (Post-doctoral category) for Excellence in Cancer Research from the
+                            Comprehensive Cancer Center of University of Alabama at Birmingham, Oct 25, 1999
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

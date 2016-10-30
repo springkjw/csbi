@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <style>
+        .jumbotron {
+            min-height: 120px;
+            background: white;
+            margin-top: 30px;
+        }
+    </style>
+{% endblock %}
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <a href="{% url 'notice_list' type=notice.type %}">{{ notice.type }}</a>
+            <p>{{ notice }}</p>
+            <h4 class=date>{{ notice.created|date:"Y-m-d" }}</h4>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="content">
+            {{ notice.content|safe }}
+        </div>
+    </div>
+{% endblock %}
