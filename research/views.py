@@ -9,7 +9,7 @@ def research(request):
     template = 'research/research.html'
     context = {
         'vision': vision,
-        'research': research(),
+        'research': research,
     }
 
     return render(request, template, context)
