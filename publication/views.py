@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Publication
-
+from .crawling import publication_c
 
 def publication(request, type=None):
+    publication_c()
     if type is None:
         type = 'journal'
 

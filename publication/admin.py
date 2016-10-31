@@ -4,14 +4,14 @@ from .models import Publication, PublicationItem
 
 class PublicationItemInline(admin.TabularInline):
     model = PublicationItem
-
-    raw_id_fields = ('name',)
     extra = 1
 
 class PublicationAdmin(admin.ModelAdmin):
     inlines = [
         PublicationItemInline
     ]
+
+    list_display = ('__unicode__', 'type',)
 
     class Meta:
         model = Publication
