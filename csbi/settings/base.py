@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'publication',
     'notice',
     'protocol',
+    'research',
     'django_summernote',
 ]
 

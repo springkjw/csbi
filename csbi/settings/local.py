@@ -4,11 +4,7 @@ from .base import (
 )
 
 DEBUG = True
-<<<<<<< HEAD
 ALLOWED_HOSTS = ['*']
-=======
-ALLOWED_HOSTS = []
->>>>>>> 739ecddfbb22467edc2b53dfa37064a806d76edc
 
 DATABASES = {
     'default': {
