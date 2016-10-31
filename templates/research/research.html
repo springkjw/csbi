@@ -40,45 +40,15 @@
             {% endfor %}
         </div>
         {% for item in research %}
-            <div class="step{{ forloop.counter }} item">
-                {{ item.content|safe }}
-            </div>
+            {% if forloop.first %}
+                <div class="step{{ forloop.counter }} item" style="display:block">
+                    {{ item.content|safe }}
+                </div>
+            {% else %}
+                <div class="step{{ forloop.counter }} item" style="display:none;">
+                    {{ item.content|safe }}
+                </div>
+            {% endif %}
         {% endfor %}
-{#        <div class="step2 item">#}
-{#            <div class="title">#}
-{#                <h3>Tumor biology</h3>#}
-{#                <div class="content">#}
-{#                    <img src="{% static 'img/Tumor biology.png' %}">#}
-{#                    <p>Anti-cancer therapy is classified to radiotherapy, surgical resection and chemotherapy. Although#}
-{#                        anti-cancer chemotherapy is well-known as the most efficient treatment for cancer patients,#}
-{#                        genomic heterogeneity of cancer cells or chemoresistance caused by persistent drug treatments#}
-{#                        leads to chemotherapy failure. Thus, a combination therapy consisting of more than two#}
-{#                        anti-cancer drugs has been widely investigated to improve the efficiency of chemotherapy. In#}
-{#                        this laboratory, we have examined several combinations of anti-cancer drugs for maximization of#}
-{#                        treatment efficiency by inducing synergistic effects within anti-cancer drugs. We aimed to#}
-{#                        construct a selection system for highly effective drug combination by bioinformatics analysis,#}
-{#                        to verify the efficiency of selected drug combinations in in vitro and in vivo levels, and then#}
-{#                        to demonstrate the intracellular signaling mechanisms of the drug combinations inducing#}
-{#                        synergistic anti-cancer effect.</p>#}
-{#                    <p style="margin-top: 10px;">In particular, among various types of cancer, we have focused on glioblastoma mutiforme (GBM), the#}
-{#                        most aggressive primary malignant brain tumor, which has infiltrative characteristics in the#}
-{#                        tumor microenvironments. Due to the greatly diffusive behaviors, definitive surgical resection#}
-{#                        is precluded, therefore, recurrence occurs frequently, and overall survival is quite short. For#}
-{#                        improvement of GBM prognosis, we aimed to investigate GBM cell behaviors, specifically focusing#}
-{#                        on the invasive characteristics by constructing in vitroand in vivo validation models in this#}
-{#                        laboratory. First, in vitro cell culture system: GBM cells migrate along preexisting thin#}
-{#                        microstructures and invade surrounding normal tissues. Therefore, we established the biomimetic#}
-{#                        cell culture platform to mimic these structural and mechanical cues in tumor micro-environments#}
-{#                        of GBM. The biomimetic system induced cytomorphological changes and migration along the pattern.#}
-{#                        Second, two in vivo intravital models: GSCs, a subpopulation of tumor stromal cells with#}
-{#                        self-renewal properties and pluripotency, exhibit unique behaviors near microvessels, otherwise#}
-{#                        known as the “perivascular niche”. However, it has not been identified whether GSCs migrate#}
-{#                        along microvessels like tumor cells. To monitor the GSC behaviors near the vessels, we#}
-{#                        constructed an orthotopic cranial window model and a dorsal skinfold chamber model for a GSC#}
-{#                        invasion study. With these animal models, we observed migration of the GSCs along the#}
-{#                        microvasculature and different adaptations in distinguished microenvironments.</p>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
     </div>
 {% endblock %}
