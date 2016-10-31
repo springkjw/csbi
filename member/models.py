@@ -51,4 +51,4 @@ class Member(models.Model):
         if self.image:
             return "/media/%s" % (self.image)
         else:
-            return "/static/img/no_profile.jpg"
+            return "/static/img/no-profile.jpg"
