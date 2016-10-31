@@ -38,100 +38,12 @@
                     </div>
                 {% endif %}
             {% endfor %}
-{#            <div class="na active" data-id="step1">#}
-{#                Research Vision#}
-{#            </div>#}
-{#            <div class="na" data-id="step2">#}
-{#                Tumor biology#}
-{#            </div>#}
-{#            <div class="na" data-id="step3">#}
-{#                Bioimaging#}
-{#            </div>#}
-{#            <div class="na" data-id="step4">#}
-{#                Bioinformatics#}
-{#            </div>#}
-{#            <div class="na" data-id="step5">#}
-{#                Exosome Engineering#}
-{#            </div>#}
         </div>
         {% for item in research %}
-            <div class="setp{{ forloop.counter }} item">
+            <div class="step{{ forloop.counter }} item">
                 {{ item.content|safe }}
             </div>
         {% endfor %}
-{#        <div class="step1 item">#}
-{#            <div class="title">#}
-{#                <h3>Development of early diagnostic tool for neurodegenerative diseases based on retinal neurovascular#}
-{#                    coupling</h3>#}
-{#                <div class="content">#}
-{#                    <img src="{% static 'img/research_1.jpg' %}">#}
-{#                    <p>When neurons in a brain are activated, they require more blood supply. To match this need,#}
-{#                        surrounding blood vessels are dilated, and blood flow rate is increased. This process is called#}
-{#                        'neurovascular coupling', which has been known to be impaired in various neurodegenerative#}
-{#                        diseases#}
-{#                        such as Alzheimer's disease (AD) and Parkinson's disease (PD). It has been proposed that#}
-{#                        impaired#}
-{#                        function of neurovascular coupling in neurodegenerative brains actually precedes the loss of#}
-{#                        cognitive functions and any pathological alterations of the brain tissue, and at the same time#}
-{#                        it is#}
-{#                        also regarded as one of the leading pathogenic mechanisms via its vicious effect on brain#}
-{#                        perfusion.#}
-{#                        In the retina, which is the extension of the central nervous system into the eyes, neurovascular#}
-{#                        coupling in response to light stimulation has been observed. It is also reported that function#}
-{#                        of#}
-{#                        the retinal neurovascular coupling is impaired in non-eye-specific diseases such as#}
-{#                        hypertension.#}
-{#                        Based on these previous results, we hypothesized that the function of retinal neurovascular#}
-{#                        coupling#}
-{#                        would be impaired in the early stage of neurodegenerative diseases and there would be a temporal#}
-{#                        correlation between cerebral and retinal neurovascular coupling impairment during progress of#}
-{#                        the#}
-{#                        diseases. Therefore, we propose that monitoring retinal neurovascular coupling function might be#}
-{#                        used as a non-invasive diagnostic tool for neurodegenerative diseases at early stage. We are now#}
-{#                        conducting experiments using neurodegenerative animal models to confirm the hypothesis in vivo.#}
-{#                        Our#}
-{#                        diverse and advanced in vivo imaging techniques are expected to clarify the attractive concept#}
-{#                        before long.</p>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="title">#}
-{#                <h3>Dynamic Fluorescence Imaging for functional monitoring of tumor vasculatures</h3>#}
-{#                <div class="content">#}
-{#                    <img src="{% static 'img/research_2.jpg' %}">#}
-{#                    <p>Angiogenesis is essential for tumor growth and a promising target for cancer therapy. In vivo#}
-{#                        monitoring of functional blood vessels is an indispensable tool for evaluation and development#}
-{#                        of anti-angiogenic drugs. Recently, we developed a new noninvasive in vivo imaging tool, named#}
-{#                        dynamic fluorescence imaging (DyFI), for the simultaneous measurement of multiple vascular#}
-{#                        parameters including vascular density, perfusion rate, and permeability using spatiotemporal#}
-{#                        profiles of indocyanine green. Using DyFI, we quantitatively measured multiple vascular#}
-{#                        parameters in tumors and normal tissues with high spatial resolution. The multimodality of this#}
-{#                        method allowed us to find negative spatial correlations between perfusion and permeability.#}
-{#                        Moreover, DyFI was effective for revealing the early effects of an anti-angiogenic drug; these#}
-{#                        findings were validated using two-photon microscopy. We expect that DyFI could be a useful tool#}
-{#                        for the preclinical development of anti-angiogenic drugs. </p>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="title">#}
-{#                <h3>Delineation of novel crosstalk mechanism between TGF-β and TNF-α signaling pathways.</h3>#}
-{#                <div class="content">#}
-{#                    <img src="{% static 'img/research_3.jpg' %}">#}
-{#                    <p>Cells continuously face diverse stimulations and integrate the signals for proper response;#}
-{#                        however, our current understanding has been restricted only to study of individual signaling#}
-{#                        cascades inside the cell. To get more in vivo-like information from normal physiology or#}
-{#                        diseased conditions, it is required to consider crosstalks between different signal transduction#}
-{#                        pathways. In this project, we studied effects of two major cytokines of opposite roles: tumor#}
-{#                        necrosis factor-alpha (TNF-alpha) and transforming growth factor-beta (TGF-beta). Interestingly,#}
-{#                        we found that in the absence of TGF-beta, TNF-alpha activated both NF-kB and MAPKs including JNK#}
-{#                        and p38. In the presence of TGF-beta, however, TNF-alpha-dependent activation of JNK and p38 was#}
-{#                        remarkably reduced, whereas NF-kB was intact. Because JNK and p38 cause cell death, pretreatment#}
-{#                        with TGF-beta rescued cells from TNF-alpha-dependent apoptosis. We unravelled internal mechanism#}
-{#                        of this novel crosstalk between TGF-beta and TNF-alpha signalling pathways. TGF-beta highly#}
-{#                        increased expression of MAPK-specific phosphatase 1 (MKP1) through Smad2/3 in 1 hour. Because#}
-{#                        the target of MKP1 is JNK and p38, cells can be resistant to subsequent TNF-alpha#}
-{#                        stimulation. </p>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
 {#        <div class="step2 item">#}
 {#            <div class="title">#}
 {#                <h3>Tumor biology</h3>#}
