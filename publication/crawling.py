@@ -3,6 +3,7 @@ import requests
 import re
 
 from bs4 import BeautifulSoup
+from .models import Publication
 
 
 def publication_c():
