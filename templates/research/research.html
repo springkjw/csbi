@@ -56,7 +56,7 @@
         </div>
         {% for item in research %}
             <div class="setp{{ forloop.counter }} item">
-                {{ item.content }}
+                {{ item.content|safe }}
             </div>
         {% endfor %}
 {#        <div class="step1 item">#}
