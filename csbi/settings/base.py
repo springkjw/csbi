@@ -73,5 +73,5 @@ USE_L10N = True
 USE_TZ = True
 
 SUMMERNOTE_CONFIG = {
-    'attachment_filesize_limit': 20,
+    'attachment_filesize_limit': 1024 * 1024 * 5,
 }
