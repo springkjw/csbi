@@ -21,12 +21,3 @@ def profile(request):
     }
 
     return render(request, template, context)
-
-
-def research(request):
-    template = 'research/research.html'
-    context = {
-
-    }
-
-    return render(request, template, context)

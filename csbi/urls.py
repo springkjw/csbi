@@ -3,10 +3,11 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from .views import home, profile, research
+from .views import home, profile
 from member.views import member
 from publication.views import publication, pub_detail
 from notice.views import list, notice_detail
+from research.views import research
 
 urlpatterns = [
     url(r'^$', home, name='home'),
