@@ -8,6 +8,7 @@ def image_location(instance, filename):
 
 
 TYPE_CHOICES = (
+    ('Professor', 'Professor'),
     ('Research Professor', 'Research Professor'),
     ('Post Doctoral Fellow', 'Post Doctoral Fellow'),
     ('Ph.D. Candidate', 'Ph.D. Candidate'),
