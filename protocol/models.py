@@ -37,6 +37,7 @@ class Protocol(models.Model):
         upload_to=image_location
     )
     video = models.URLField(null=True, blank=True)
+    korean = models.URLField(null=True, blank=True)
     paper_link = models.URLField(null=True, blank=True)
 
     def __unicode__(self):

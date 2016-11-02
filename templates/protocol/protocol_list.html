@@ -15,6 +15,26 @@
     </style>
 {% endblock %}
 
+{% block js %}
+    <script type="text/javascript">
+        $(function () {
+            $('.nav .na').on('click', function () {
+                $('.na').removeClass('active');
+                $(this).addClass('active');
+                var type = $(this).attr('data-type');
+
+                $('.item').each(function () {
+                    if ($(this).attr('data-type') == type) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
 {% block jumbotron %}
     <div class="jumbotron">
         <div class="container">
@@ -28,11 +48,11 @@
         <div class="nav" style="margin-top:30px;">
             {% for item in type %}
                 {% if forloop.counter0 == 0 %}
-                    <div class="na active">
+                    <div class="na active" data-type="{{ item.0 }}">
                         {{ item.1 }}
                     </div>
                 {% else %}
-                    <div class="na" data-id="step1">
+                    <div class="na" data-id="step1" data-type="{{ item.0 }}">
                         {{ item.1 }}
                     </div>
                 {% endif %}
@@ -40,7 +60,7 @@
         </div>
         <div class="content">
             {% for item in protocol %}
-                <div class="item">
+                <div class="item" data-type="{{ item.type }}">
                     <div class="image">
                         {% if item.video %}
                             <a href="{{ item.video }}" target="_blank">
@@ -61,6 +81,9 @@
                         <p>{{ item.get_presenter }}</p>
                         {% if item.paper_link %}
                             <a href="{{ item.paper_link }}" class="paper" target="_blank">ORIGINAL PAPER</a>
+                        {% endif %}
+                        {% if item.korean %}
+                            <a href="{{ item.korean }}" class="korean" target="_blank">KOREAN VER.</a>
                         {% endif %}
                     </div>
                 </div>
