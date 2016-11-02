@@ -1,7 +1,6 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 SECRET_KEY = 'ci4_j-%3g86@4$1plkuw#den1jezpg^61-r^#+la^xef)&nud$'
 
 INSTALLED_APPS = [
@@ -11,8 +10,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'member',
     'publication',
+    'member',
     'notice',
     'protocol',
     'research',
