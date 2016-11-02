@@ -29,11 +29,11 @@ class Notice(models.Model):
     title = models.CharField(max_length=120)
     type = models.CharField(max_length=120, choices=TYPE_CHOICES, default='notice')
     content = summer_fields.SummernoteTextField(null=True, blank=True)
-    author = models.ForeignKey(User, default="csbi")
+    author = models.ForeignKey(User, default=lambda: User.objects.get(id=1))
     active = models.BooleanField(default=True)
     like = models.PositiveIntegerField(default=0)
-    updated = models.DateTimeField(editable=True)
-    created = models.DateTimeField(editable=True)
+    updated = models.DateTimeField()
+    created = models.DateTimeField()
 
     objects = NoticeManager()
 
