@@ -3,7 +3,7 @@ from .models import Notice
 
 
 class NoticeAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'author', 'create', 'like',)
+    list_display = ('__unicode__', 'author', 'created', 'like',)
 
 
 admin.site.register(Notice, NoticeAdmin)
