@@ -39,10 +39,10 @@
                     <div class="image">
                         {% if item.video %}
                             <a href="{{ item.video }}" target="_blank">
-                                <img src="{{ item.get_image_url }}"/>
+                                <img src="{{ item.get_image_url }}" width="168" height="300"/>
                             </a>
                         {% else %}
-                            <img src="{{ item.get_image_url }}"/>
+                            <img src="{{ item.get_image_url }}" width="168" height="300"/>
                         {% endif %}
                     </div>
                     <div class="sub-content">
