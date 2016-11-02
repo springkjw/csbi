@@ -1,2 +1,65 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/protocol.css' %}">
+    <style>
+        .jumbotron {
+            min-height: 180px;
+            background-image: url("{% static 'img/notice_bg.jpg' %}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 0.9;
+        }
+    </style>
+{% endblock %}
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <h2>PROTOCOL</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="nav" style="margin-top:30px;">
+            <div class="na active step1" data-id="step1">
+                <a href="{% url 'notice_list' type='notice' %}">Notice</a>
+            </div>
+            <div class="na step2" data-id="step2">
+                <a href="{% url 'notice_list' type='news' %}">News</a>
+            </div>
+        </div>
+        <div class="content">
+            {% for item in protocol %}
+                <div class="item">
+                    <div class="image">
+                        {% if item.video %}
+                            <a href="{{ item.video }}" target="_blank">
+                                <img src="{{ item.get_image_url }}"/>
+                            </a>
+                        {% else %}
+                            <img src="{{ item.get_image_url }}"/>
+                        {% endif %}
+                    </div>
+                    <div class="sub-content">
+                        {% if item.video %}
+                            <a href="{{ item.video }}" target="_blank">
+                                <h3>{{ item }}</h3>
+                            </a>
+                        {% else %}
+                            <h3>{{ item }}</h3>
+                        {% endif %}
+                        <p>{{ item.get_presenter }}</p>
+                        {% if item.paper_link %}
+                            <a href="{{ item.paper_link }}" class="paper" target="_blank">ORIGINAL PAPER</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
