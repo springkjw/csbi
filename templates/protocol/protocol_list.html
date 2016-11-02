@@ -60,7 +60,11 @@
         </div>
         <div class="content">
             {% for item in protocol %}
-                <div class="item" data-type="{{ item.type }}">
+                {% if item.type != type.0.0 %}
+                    <div class="item" data-type="{{ item.type }}" style="display:none;">
+                {% else %}
+                    <div class="item" data-type="{{ item.type }}" style="display:block;">
+                {% endif %}
                     <div class="image">
                         {% if item.video %}
                             <a href="{{ item.video }}" target="_blank">
