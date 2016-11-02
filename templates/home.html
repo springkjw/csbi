@@ -74,6 +74,9 @@
                 </div>
                 <div class="content">
                     <div class="notice">
+                        <div class="sub-title">
+                            Notice
+                        </div>
                         {% for obj in notice %}
                             <div class="item">
                                 <a href="{{ obj.get_absolute_url }}">{{ obj|truncatechars:30 }}</a>
@@ -82,6 +85,9 @@
                         {% endfor %}
                     </div>
                     <div class="news_">
+                        <div class="sub-title">
+                            News
+                        </div>
                         {% for obj in news %}
                             <div class="item">
                                 <a href="{{ obj.get_absolute_url }}">{{ obj|truncatechars:30 }}</a>
