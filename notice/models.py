@@ -25,11 +25,15 @@ TYPE_CHOICES = (
 )
 
 
+def default_author():
+    return User.objects.get(id=1)
+
+
 class Notice(models.Model):
     title = models.CharField(max_length=120)
     type = models.CharField(max_length=120, choices=TYPE_CHOICES, default='notice')
     content = summer_fields.SummernoteTextField(null=True, blank=True)
-    author = models.ForeignKey(User, default=lambda: User.objects.get(id=1))
+    author = models.ForeignKey(User, default=default_author)
     active = models.BooleanField(default=True)
     like = models.PositiveIntegerField(default=0)
     updated = models.DateTimeField()
