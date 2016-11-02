@@ -45,7 +45,7 @@ class Protocol(models.Model):
     @property
     def get_image_url(self):
         if self.image:
-            return "/media/%s" % (self.video)
+            return "/media/%s" % (self.image)
         else:
             return "/static/img/no-video.png"
 
